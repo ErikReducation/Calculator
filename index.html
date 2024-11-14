@@ -25,19 +25,24 @@
 	let nums[];
 	let gameOver = false;
 	do{
-	nums[0] = prompt();//get first number
+	nums[0] = prompt('Welcome to the calculator. Enter a number.');//get first number
 	
-	let i=1;
+	let i=0;
 	do { //get rest of numbers
 		let done = false;
-		if (prompt() == 'y' ){//choose to add number
-		nums[i]=prompt();
-		i++;
+		if (prompt(`You entered ${nums[i]}. Enter another y/n?`) == 'y' ){//choose to add number
+			if (prompt(`You entered ${nums.length} numbers, are there more y/n ?`) == 'y') { //ask if user is sure after being told current length of array
+		
+			i++;
+			nums[i]=prompt('Enter a number.');
+			} else {//choose to move to operation
+				done=true;
+			}
 		} else {//choose to move to operation
 		done=true;
 		}	
 	} until (done)
-	let choice = prompt();//choose operation
+	let choice = prompt('What Operation would you like to perform +, -, *, / ?');//choose operation
 	let result =0;
 	switch (choice){
 		case '+':
