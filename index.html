@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Calculator">
 	<meta name="author" content="Erik Rosenbalm">
 	<meta name="viewport" content="width=device-width">  
-	<title>websitetitle</title>
+	<title>Calcutron 5000</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 
 	<!--Margin view. TURN THIS OFF BEFORE PUBLISHING-->
@@ -29,15 +29,16 @@
 	let nums = [];//nums array must be cleared inside the outer loop to prevent numlength from being incorrectly large during second 
 		      //round of calculations or later.
 	nums[0] = +prompt('Welcome to the calculator. Enter a number.');//get first number using unary plus
-	done = false;//in case of repeat customer
-	let i=0;
-	do { //get rest of numbers
+	done = false;//makes sure loop is enterable if during second round of calculations or later
+	let i=0;//makes sure iterator is zero if during... etc
+	do { //get rest of numbers, or all numbers if during... etc
 		
 		if (prompt(`You entered ${nums[i]}. Enter another y/n?`) == 'y' ){//choose to add number
-			if (prompt(`You entered ${nums.length} numbers, are there more y/n ?`) == 'y') { //ask if user is sure after being told current length of array
+			if (prompt(`You entered ${nums.length} numbers, are there more y/n ?`) == 'y') { //ask if user is sure after being told 
+													 //current length of array (number of numbers)
 		
 			i++;
-			nums[i]=+prompt('Enter a number.');
+			nums[i]=+prompt('Enter a number.');//if user is double sure, enters a number in the array of numbers at index i
 			} else {//choose to move to operation
 				done=true;
 			}
