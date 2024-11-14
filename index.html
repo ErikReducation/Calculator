@@ -41,7 +41,7 @@
 		} else {//choose to move to operation
 		done=true;
 		}	
-	} until (done)
+	} while (done=false)
 	let choice = prompt('What Operation would you like to perform +, -, *, / ?');//choose operation
 	let result =0;
 	switch (choice){
@@ -84,7 +84,7 @@
 		break;
 	}
 		
-	} until (gameOver)
+	} while (gameOver=false)
 	alert('Thanks for playing!');
 	</script>
 </body>
