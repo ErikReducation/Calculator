@@ -21,5 +21,65 @@
 	
 </head>
 <body>
+	<script>
+	let nums[];
+	let gameOver = false;
+	do{
+	nums[0] = prompt();//get first number
+	
+	let i=1;
+	do { //get rest of numbers
+		let done = false;
+		if (prompt() == 'y' ){//choose to add number
+		nums[i]=prompt();
+		i++;
+		} else {//choose to move to operation
+		done=true;
+		}	
+	} until (done)
+	let choice = prompt();//choose operation
+	let result =0;
+	switch (choice){
+		case '+':
+			for (let j = 0, j<nums.length, j++;) {
+				result = result + nums[j];
+			}
+			break;
+		case '-':
+			for (let k = 0, k<nums.length, k++;){
+				result = result - nums[k];
+			}
+			break;
+		case '*':
+			result =1;//wouldn't want to multiply all chosen numbers by 0
+			for (let l = 0, l<nums.length, l++;){
+				result = result * nums[l];
+			}
+			break;
+		case '/':
+			if (nums.length!=2){
+				alert('Number of operands must be two');
+				break;
+			} else {
+				result = nums[0]/nums[1];
+			}
+			break;
+		default: 
+			alert('Not a valid operation');
+			break;
+	}
+	
+	let input = prompt(`You entered ${nums.length} numbers. Your answer is ${result}. Would you like to perform another calculation y/n ?`);//ask to do another calc
+	if (input == 'y' {
+		alert(`Let\'s do it!`);
+	} else if (input == 'n'){
+		gameOver = true;
+	} else {
+		alert('invalid input');
+		break;
+	}
+		
+	} until (gameOver)
+	</script>
 </body>
 </html>
